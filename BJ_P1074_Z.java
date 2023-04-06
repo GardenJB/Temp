@@ -36,6 +36,7 @@ public class BJ_P1074_Z {
 	
 	//몇 분면인지 찾기
 	private static void wh(int x, int y, int n) {
+		//System.out.println(x+" "+y);
 	
 		//끝점을 비교하기
 		int pre_x = x+val[n-1]-1;
@@ -54,12 +55,14 @@ public class BJ_P1074_Z {
 	//누적된 순번 계산하기
 	private static void cal(int w, int n, int x, int y) {
 		if(n==1) {
-			cnt+= w;
+			cnt+= w-1;
 			return;
 		}
+		//********누적합은 행값이 아닌 구간 넓이 값
+		cnt += (w-1)*val[n-1]*val[n-1];
+		//System.out.println(cnt);
 		
-		cnt += (w-1)*val[n-1];
-		//시작점 찾아 넘기기
+		//시작점 찾아 넘기기*** 좌표
 		switch(w) {
 		case 1:
 			wh(x, y, n-1);
@@ -73,10 +76,7 @@ public class BJ_P1074_Z {
 		case 4 :
 			wh(x+val[n-1], y+val[n-1], n-1);
 			break;
-		}
-
-		
-		
+		}		
 	}
 
 }
