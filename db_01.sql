@@ -94,7 +94,7 @@ ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`User`
--- -----------------------------------------------------
+-- ---------------------rank--------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`User` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `password` VARCHAR(45) NOT NULL,
